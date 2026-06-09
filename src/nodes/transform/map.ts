@@ -1,0 +1,37 @@
+import { z } from "zod";
+import { createExecutionContext } from "../../core/context.js";
+import { defineNode } from "../../core/node.js";
+
+export const mapNode = defineNode({
+	type: "map",
+	name: "Map",
+	description:
+		"Map each item in an array through an object template with {{item.field}} interpolation",
+	category: "transform",
+	inputSchema: z.object({
+		items: z.array(z.unknown()),
+		template: z.record(z.unknown()),
+		nextNode: z.string().optional(),
+	}),
+	outputSchema: z.object({
+		items: z.array(z.unknown()),
+		count: z.number(),
+	}),
+	executor: async (input, context) => {
+		const mappedItems = input.items.map((item) => {
+			// Create a child context that has 'item' set + inherits parent vars
+			const childCtx = createExecutionContext(context.services, {
+				...context.snapshot(),
+				item,
+			});
+			return childCtx.interpolateObject(
+				input.template as Record<string, unknown>,
+			);
+		});
+		return {
+			success: true,
+			output: { items: mappedItems, count: mappedItems.length },
+			nextNode: input.nextNode,
+		};
+	},
+});
