@@ -157,7 +157,6 @@ import { googleSheetsUpdateNode } from "./nodes/integrations/google-sheets/googl
 import { httpRequestNode } from "./nodes/integrations/http/index.js";
 import { soraVideoNode } from "./nodes/integrations/openai/sora-video.js";
 import { openrouterGenerateNode } from "./nodes/integrations/openrouter/index.js";
-import { playwrightScreenshotNode } from "./nodes/integrations/playwright-render/index.js";
 import { rssFetchNode } from "./nodes/integrations/rss/index.js";
 import { redditMonitorNode } from "./nodes/integrations/social/reddit-monitor.js";
 import { twitterGetUserByUsernameNode } from "./nodes/integrations/social/twitter-get-user-by-username.js";
@@ -254,7 +253,6 @@ export {
 	mapNode,
 	openrouterGenerateNode,
 	parallelNode,
-	playwrightScreenshotNode,
 	rateLimiterNode,
 	redditMonitorNode,
 	retryNode,
@@ -352,5 +350,4 @@ export const builtInNodes = [
 	gitOperationsNode,
 	elevenlabsTtsNode,
 	ffmpegComposeNode,
-	playwrightScreenshotNode,
 ] as const;

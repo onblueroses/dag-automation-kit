@@ -7,7 +7,7 @@ It's a starter template: clone it, read the examples, swap in your own nodes, an
 ## What you get
 
 - A small core engine (`runWorkflow` / `runDAGWorkflow`) with typed nodes.
-- A library of integration nodes: HTTP, SQLite, OpenRouter, OpenAI, Playwright render, FFmpeg, ElevenLabs, RSS, YouTube, Discord, Firecrawl, Tavily, Google Sheets, Git, SSH, Unsplash, dev.to, WordPress, and read-only social monitors.
+- A library of integration nodes: HTTP, SQLite, OpenRouter, OpenAI, FFmpeg, ElevenLabs, RSS, YouTube, Discord, Firecrawl, Tavily, Google Sheets, Git, SSH, Unsplash, dev.to, WordPress, and read-only social monitors.
 - Persistence plus an approval-gate HTTP server for human-in-the-loop workflows.
 - Four worked [examples](./docs/examples) that run offline and adapt cleanly.
 

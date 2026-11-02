@@ -28,8 +28,6 @@ export * from "./http/index.js";
 export * from "./openai/index.js";
 // OpenRouter
 export * from "./openrouter/index.js";
-// Playwright Render
-export * from "./playwright-render/index.js";
 // RSS
 export * from "./rss/index.js";
 export * from "./social/index.js";
